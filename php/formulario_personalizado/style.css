@@ -1,0 +1,44 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    font-family: sans-serif;
+
+}
+header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    min-height: 70px;
+    justify-content: space-between;
+    background-color: black;
+    padding: 10px;
+}
+a{
+    text-decoration: none;
+
+}
+h1 { 
+    color: rgb(90, 221, 90);
+
+}
+nav a{
+    padding-right: 20px;
+    color: rgb(90, 221, 90);
+}
+nav a:hover{
+    color: white;
+}
+table{
+   display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+}
+
+#hero h2{
+    text-align: center;
+}
+

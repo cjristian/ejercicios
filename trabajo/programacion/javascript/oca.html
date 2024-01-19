@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Juego de la Oca</h1>
+    <p>¿Cuantos jugadores sois?</p>
+    <button id="boton1">2 jugadores</button>
+    <button id="boton2">3 jugadores</button>
+    <button id="boton3">4 jugadores</button>
+    <p id="color"></p>
+
+
+    <script>
+        var colores = Array("rojo", "verde", "azul", "amarillo")
+        var boton1 = document.getElementById("boton1");
+        var boton2 = document.getElementById("boton2");
+        var boton3 = document.getElementById("boton3");
+
+
+        boton1.addEventListener("click", jugadores2)
+        boton2.addEventListener("click")
+        boton3.addEventListener("click")
+        function jugadores2() {
+            
+            var resultado = "Elige los colores de los 2 jugadores"
+            document.getElementById("color").textContent = resultado;
+
+            var nuevop = document.createElement("p")
+            nuevop.id="parrafo1";
+            nuevop.innerHTML = "Elige el color del jugador1"
+            document.body.appendChild(nuevop);
+
+            var nuevoselect = document.createElement("select")
+            document.body.appendChild(nuevoselect);
+
+            for (let index = 0; index < colores.length; index++) {
+                var opcion1 = document.createElement("option")
+                opcion1.id = colores[index];
+                opcion1.innerHTML=colores[index]
+
+                nuevoselect.appendChild(opcion1);
+            }
+            
+            document.getElementById("parrafo1").textContent= "Elige el color del jugador2"
+          
+
+            var nuevoselect = document.createElement("select")
+            document.body.appendChild(nuevoselect);
+
+            for (let index = 0; index < colores.length; index++) {
+                var opcion1 = document.createElement("option")
+                opcion1.id = colores[index];
+                opcion1.innerHTML=colores[index]
+
+                nuevoselect.appendChild(opcion1);
+            }
+
+
+
+        }
+
+
+        // var boton_numero1 = document.getElementById("pin1");
+        // var boton_de_calcular = document.getElementById("boton_calc");
+
+        // boton_numero1.addEventListener("click", cambio_valor);
+        // boton_de_calcular.addEventListener("click", Sumar);
+
+        // var n1 = 72;
+        // var n2 = 21;
+
+        // function cambio_valor() {
+        //     n1 = 81;
+        // }
+
+        // function Sumar() {
+        //     var suma = n1 + n2;
+        //     alert("La suma de: " + n1 + " + " + n2 + " es igual a " + suma);
+
+    </script>
+</body>
+
+</html>

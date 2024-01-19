@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: green;
+        }
+    </style>
+
+</head>
+
+<body>
+    <form action="">
+        <<div class="container">
+            <div class="row mt-5">
+                <div class="col-6">
+                    <label for="nombre" class="form-label text-warning">Nombre</label>
+                    <input type="text" class="form-control" placeholder="Marco Zarate">>
+                    <label for="label-nota" class="form-label text-warning">Mensaje</label>
+                    <textarea name="" id="label-nota" aria-label="Notas" class="form-control"></textarea>
+
+                </div>
+                <div class="col-6">
+
+                    <label for="correo" class="form-label text-warning">Correo</label>
+                    <input type="email" class="form-control" placeholder="correo@correo.com">
+                    <div class="row mt-3">
+                        <div class="col-6 mb-3">
+                            <div class="form-check">
+                                <label for="civil" class="form-label text-warning">Estado civil</label>
+                            </div>
+                            <div class="form-check">
+                                <input type="radio" class="form-ckeck-input" name="mi-radio-button" id="radio-1">
+                                <label for="radio-1" class="form-ckeck-label text-warning">Solter@</label>
+                            </div>
+                            <div class="form-check">
+                                <input type="radio" class="form-ckeck-input" name="mi-radio-button" id="radio-2">
+                                <label for="radio-2" class="form-ckeck-label text-warning">Casada@</label>
+                            </div>
+                        </div>
+                        <div class="col-6 mb-3">
+                            <label for="pais" class="form-label text-warning">Pais</label>
+                            <select name="pais" id="pais" class="form-select mb-3" aria-label="Seleccion de pais">
+                                <option value="portugal">Portugal</option>
+                                <option value="esapaña">Esapaña</option>
+                                <option value="italia">Italia</option>
+                            </select>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="d-flex justify-content-center">
+                        <div class="form-check">
+                            <input type="checkbox" name="checkbox-1" id="checkbox-1" class="form-check-input">
+                            <label for="checkbox-1" class="form-check-label text-warning">Acepto los terminos y
+                                condiciones</label>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-block btn-primary">Enviar</button>  
+                </div>
+            </div>
+
+        </div>
+    </form>
+
+</body>
+
+</html>

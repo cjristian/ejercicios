@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JuegOca</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('img/juegoTablero.jpg');
+            /* Reemplaza 'tu-imagen.jpg' con la ruta de tu imagen de fondo */
+            background-size: 100% 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+        }
+
+
+    </style>
+</head>
+
+<body>
+  
+        <form action="validacion.php" method="get">
+            <?php 
+
+            ?>
+            <button class="botones" type="submit" name="bot1" id="bot1">2 Jugadores</button>
+            <button class="botones" type="submit" name="bot2" id="bot2">3 Jugadores</button>
+            <button class="botones" type="submit" name="bot3" id="bot3">4 Jugadores</button>
+        </form>
+    
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .flex-cotainer {
+            display: flex;
+            height: 100vh;
+            flex-wrap: wrap;
+        }
+
+        .flex-item {
+            background-color: rgb(161, 26, 128);
+            color: white;
+            margin: 10px;
+            padding: 10px;
+            height: 150px;
+           
+            min-width: 150px;
+            flex-shrink: 1;
+             
+
+        }
+
+        .item-blue {
+            background-color: blue;
+           
+        }
+        .item-orangen {
+            background-color: rgb(238, 83, 36);
+            align-self: center;
+            
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="flex-cotainer">
+
+        <div class="flex-item item-blue"></div>
+        <div class="flex-item"></div>
+        <div class="flex-item item-orangen"></div>
+        
+    </div>
+</body>
+
+</html>

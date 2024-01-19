@@ -1,0 +1,58 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+
+}
+
+nav a {
+    text-decoration: none;
+    padding: 20px;
+    color: black;
+    font-weight: bold;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.containerboton button img {
+    border-radius: 160px;
+
+}
+
+
+.texto--dif {
+    font-size: 15px;
+    font-style: italic;
+
+}
+
+.containerimg img {
+    margin: 20px;
+    height: 30px;
+    width: 30px;
+    border-radius: 160px;
+}
+
+a:hover {
+    color: blue;
+}

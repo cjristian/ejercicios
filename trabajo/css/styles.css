@@ -1,0 +1,43 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: sans-serif;
+}
+header{
+    display: flex;
+    background-color:black;
+    justify-content: space-between;
+
+}
+ img{
+    height: 90px;
+    width: 110px;
+    border-radius: 40px;
+    padding-right: 10px;
+}
+h1{
+    color: aliceblue;
+    font-size: 2em;
+}
+.container{
+    max-width: 1400px;
+    margin: auto;
+}
+.opciones{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+}
+.opciones,a{
+    text-decoration: none;
+    padding-right: 10px;
+    color: white;
+}
+.color{
+    color: rgb(107, 6, 6);
+}

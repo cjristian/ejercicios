@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Documento</title>
+  <!-- cristian Jimenez 30/11/2023 -->
+</head>
+
+<body>
+  <script>
+    // Buenas practicas
+    // -En este programa hemos opdato por un orden en el codigo
+    // -Aunque no sea necesario los ;, los ponemos para no perder la complejidad de la programacion
+    // -Utilizar camelCase
+    // -Comentarios de las funciones realizadas
+    var gas = {
+      temperaturaKelvin: 290,
+      colo: "rojo",
+      set temperaturaCelsius(x) { this.temperaturaKelvin = x + 273; },
+      get temperaturaCelsius() { return this.temperaturaKelvin - 273; },
+    };
+
+    // Mostrar la temperatura en Celsius usando el getter
+    alert("Temperatura en Celsius: " + gas.temperaturaCelsius)
+
+    // Establecer la temperatura en Celsius usando el setter
+    gas.temperaturaCelsius = 0;
+
+    // Mostrar la temperatura actualizada en Kelvin usando el getter
+    alert("Temperatura en Kelvin: " + gas.temperaturaKelvin);
+
+  </script>
+
+
+
+  <script>
+    var agua = {
+      temperaturaKelvin: 290,
+      litros: 30,
+      set mililitros(x) { this.litros = x * 1000; },
+      get mililitros() { return this.litros - 1000; },
+      verificarEbullicion: function () {
+        return this.temperaturaKelvin >= 373; // 373 K es el punto de ebullición del agua
+      }
+    };
+
+    // Mostrar el volumen en litros usando el getter
+    alert("Volumen en litros: " + agua.litros);
+
+    // Establecer el volumen en litros usando el setter
+    agua.litros = 2;
+
+    // Mostrar el volumen actualizado en mililitros usando el getter
+    alert("Volumen en mililitros: " + agua.temperaturaKelvin);
+
+    // Verificar si el agua ha alcanzado el punto de ebullición
+    if (agua.verificarEbullicion()) {
+      alert("El agua ha alcanzado el punto de ebullición.");
+    } else {
+      alert("El agua no ha alcanzado el punto de ebullición.");
+    }
+  </script>
+  <script>
+    let persona = {
+      _nombre: "John",
+      _edad: 30
+    };
+
+    Object.defineProperty(persona, 'nombre', {
+      get: function () {
+        console.log('Leyendo nombre');
+        return this._nombre;
+      },
+      set: function (nuevoNombre) {
+        console.log('Cambiando nombre a', nuevoNombre);
+        this._nombre = nuevoNombre;
+      }
+    });
+
+    Object.defineProperty(persona, 'edad', {
+      get: function () {
+        console.log('Leyendo edad');
+        return this._edad;
+      },
+      set: function (nuevaEdad) {
+        console.log('Cambiando edad a', nuevaEdad);
+        this._edad = nuevaEdad;
+      }
+    });
+
+    // Ahora, puedes usar las propiedades 'nombre' y 'edad' con los getters y setters definidos
+    console.log(persona.nombre); // Muestra 'Leyendo nombre' y luego 'John'
+    persona.nombre = 'Jane'; // Muestra 'Cambiando nombre a Jane'
+    console.log(persona.nombre); // Muestra 'Leyendo nombre' y luego 'Jane'
+
+    console.log(persona.edad); // Muestra 'Leyendo edad' y luego '30'
+    persona.edad = 31; // Muestra 'Cambiando edad a 31'
+    console.log(persona.edad); // Muestra 'Leyendo edad' y luego '31'
+
+  </script>
+
+
+</body>
+
+</html>

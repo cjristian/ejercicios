@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="row mt-3">
+            <div class="col-6">
+                <form action="#" method="post">
+                    <div class="mb-3">
+
+                        <label for="correo" class="form-label">Correo Electronico</label>
+                        <input type="email" id="correo" name="correo" class="form-control">
+                        <div class="form-text" id="ayuda-correo">
+                            Te enviaremos un mensaje de confimacion
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="area" class="form-label">Mensaje</label>
+                        <textarea name="area" id="area" class="form-control"></textarea>
+                    </div>
+                        <button type="submit" class="btn btn-primary">Enviar Comentario</button>
+                    
+                </form>
+            </div>
+            <div class="col-6">
+                <form action="">
+                    <input type="text" placeholder="Input Grande" class="form-control form-control-lg mb-3">
+                    <input type="text" placeholder="Input Pequeño" class="form-control form-control-sm mb-3">
+                    <input type="text" placeholder="Input Deshabiliado" class="form-control mb-3" disabled>
+                    <input type="text" placeholder="Input solo lectura" class="form-control  mb-3" readonly>
+                    <input type="text" placeholder="Input solo lectura" class="form-control-plaintext  mb-3" readonly>
+                    <input type="file" placeholder="Input solo lectura" class="form-control">
+                </form>
+            </div>
+
+
+
+
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row mt-3">
+                <select name="pais" id="pais" class="form-select mb-3" aria-label="Seleccion de pais">
+                    <option value="francia">Francia</option>
+                    <option value="esapaña">Esapaña</option>
+                    <option value="italia">Italia</option>
+                </select>
+                <select name="pais" id="pais" class="form-select form-select-lg mb-3" aria-label="Seleccion de pais">
+                    <option value="francia">Francia</option>
+                    <option value="esapaña">Esapaña</option>
+                    <option value="italia">Italia</option>
+                </select>
+                <select name="pais" id="pais" class="form-select form-select-sm mb-3" aria-label="Seleccion de pais">
+                    <option value="francia">Francia</option>
+                    <option value="esapaña">Esapaña</option>
+                    <option value="italia">Italia</option>
+                </select>
+                <select multiple size="3" name="pais" id="pais" class="form-select mb-3" aria-label="Seleccion de pais">
+                    <option value="francia">Francia</option>
+                    <option value="esapaña">Esapaña</option>
+                    <option value="italia">Italia</option>
+                    <option value="esapaña">Ecuador</option>
+                    <option value="italia">Bolivia</option>
+                </select>
+                <select disabled name="pais" id="pais" class="form-select mb-3" aria-label="Seleccion de pais">
+                    <option value="francia">Francia</option>
+                    <option value="esapaña">Esapaña</option>
+                    <option value="italia">Italia</option>
+                </select>
+
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="rowmt-3">
+            <div class="col-4">
+                <div class="form-check">
+                    <input type="checkbox" name="checkbox-1" id="checkbox-1" class="form-check-input">
+                    <label for="checkbox-1" class="form-check-label">checkbox1</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" name="checkbox-2" id="checkbox-2" class="form-check-input">
+                    <label for="checkbox-2" class="form-check-label">checkbox2</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" name="checkbox-3" id="checkbox-3" class="form-check-input">
+                    <label for="checkbox-3" class="form-check-label">checkbox3</label>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="form-check">
+                    <input type="radio" class="form-ckeck-input" name="mi-radio-button" id="radio-31>
+                    <label for="radio-1" class="form-ckeck-label">Radio 1</label>
+
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-ckeck-input" name="mi-radio-button" id="radio-1">
+                    <label for="radio-2" class="form-ckeck-label">Radio 2</label>
+
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-ckeck-input" name="mi-radio-button" id="radio-3">
+                    <label for="radio-3" class="form-ckeck-label">Radio 3</label>
+                </div>
+
+            </div>
+            <div class="col-4">
+                <div class="form-check formswitch">
+                    <input type="checkbox" class="form-check-input">
+                    <label for="switch-1" class="form-ckeck-label">Switch1</label>
+                </div>
+                <div class="form-check formswitch">
+                    <input type="checkbox" class="form-check-input">
+                    <label for="switch-1" class="form-ckeck-label">Switch2</label>
+                </div>
+                <div class="form-check formswitch">
+                    <input type="checkbox" class="form-check-input">
+                    <label for="switch-1" class="form-ckeck-label">Switch3</label>
+                </div>
+            </div>
+            <div class="col-12 mt-4">
+                <div class="form-check form-check-inline">
+                    <inpu class="form-check-label"></inpu>
+                    <label for="checkbox-1" class="form-check-label">checkbox 1</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <inpu class="form-check-label"></inpu>
+                    <label for="checkbox-1" class="form-check-label">checkbox 1</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <inpu class="form-check-label"></inpu>
+                    <label for="checkbox-1" class="form-check-label">checkbox 1</label>
+                </div>
+            </div>
+            <div class="col-6 mt-4">
+                <input type="checkbox" name="checkbox-button-1" id="checkbox-button1" class="btn-check">
+                <label for="checkbox-button-1" class="btn btn-primary">Checkbox1</label>
+                <input type="checkbox" name="checkbox-button-2" id="checkbox-button2" class="btn-check">
+                <label for="checkbox-button-2" class="btn btn-primary">Checkbox2</label>
+                <input type="checkbox" name="checkbox-button-3" id="checkbox-button3" class="btn-check" disabled>
+                <label for="checkbox-button-3" class="btn btn-primary">Checkbox3</label>
+            </div>
+            <div class="col-6 mt-4">
+                <input type="radio" name="radio-button" id="radio-button-1" class="btn-check">
+                <label for="radio-button-1" class="btn btn-primary">Radio 1</label>
+                <input type="radio" name="radio-button" id="radio-button-2" class="btn-check">
+                <label for="radio-button-2" class="btn btn-primary">Radio 2</label>
+                <input type="radio" name="radio-button" id="radio-button-3" class="btn-check">
+                <label for="radio-button-3" class="btn btn-primary">Radio 3</label>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

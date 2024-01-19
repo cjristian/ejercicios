@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+<script>
+    // Definición de la función objeto Gas
+function Gas(volumen, moles, temperatura) {
+  // Propiedades
+  this.volumen = volumen;
+  this.moles = moles;
+  this.temperatura = temperatura;
+
+  // Método para calcular la presión
+  this.calcularPresion = function() {
+    return this.moles * this.temperatura * 8.314 / this.volumen;
+  };
+}
+
+// Crear una instancia de Gas
+const gas1 = new Gas(1.0, 2.0, 273.15); // Volumen: 1.0, Moles: 2.0, Temperatura: 273.15 K
+
+// Calcular la presión utilizando el método
+const presion = gas1.calcularPresion();
+
+console.log("Presión:", presion);
+
+</script>
+</body>
+
+</html>

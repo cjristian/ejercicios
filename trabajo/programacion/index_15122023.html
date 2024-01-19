@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tabla de Multiplicar</title>
+  <!-- CRISTAN JAVIER JIMENEZ SARANGO -->
+</head>
+<body>
+  <h1>Tabla de Multiplicar</h1>
+  <script>
+    // Pide al usuario ingresar un número
+    var inputNumber = prompt("Ingrese un número para mostrar la tabla de multiplicar:");
+
+    // Validación si el usuario ingresa un número válido
+    if (!isNaN(inputNumber)) {
+      // Convierte la entrada a un número
+      var number = parseFloat(inputNumber);
+
+      // Crea un elemento ul para mostrar la tabla de multiplicar
+      var ul = document.createElement("ul");
+
+      // Utiliza un bucle para generar dinámicamente los elementos li con los resultados
+      for (var i = 1; i <= 10; i++) {
+        var result = number * i;
+        var li = document.createElement("li");
+        li.textContent = `${number} x ${i} = ${result}`;
+        ul.appendChild(li);
+      }
+
+      // Agrega la lista al cuerpo del documento
+      document.body.appendChild(ul);
+    } else {
+      // Muestra un mensaje de validación si no se ingresa un número válido
+      var validationMessage = document.createElement("div");
+      validationMessage.textContent = "Por favor, ingrese un número válido.";
+      validationMessage.style.color = "red";
+      document.body.appendChild(validationMessage);
+    }
+  </script>
+</body>
+</html>

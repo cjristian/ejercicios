@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Cristian Javier Jimenez Sarango 04/12/2023 -->
+</head>
+
+<body>
+    <script>
+        function Circulo(radio) {
+            var _radio = radio == undefined ? 0 : radio;
+            this.__defineSetter__('perimetro', function (x) { _radio = x / (2 * Math.PI); });
+            this.__defineGetter__('perimetro', function () { return 2 * Math.PI * _radio; });
+
+
+        }
+        var circulo = new Circulo(2);
+        console.log("Perimetro: " + circulo.perimetro);
+        circulo.perimetro = 2;
+
+
+        // Ejercicio pagina 98
+        // Extiende el prototipo de Array con un nuevo método llamado shuffle
+        Array.prototype.shuffle = function () {
+            for (let i = this.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [this[i], this[j]] = [this[j], this[i]];
+            }
+        };
+
+        const myArray = [1, 2, 3, 4, 5];
+        console.log("Array original:", myArray);
+
+        // Usa el método shuffle para barajar el array
+        myArray.shuffle();
+        console.log("Array barajado:", myArray);
+   
+
+
+
+
+        // Función para crear una baraja española
+        function crearBaraja() {
+            const palos = ['Oros', 'Copas', 'Espadas', 'Bastos'];
+            const valores = ['As', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'Sota', 'Caballo', 'Rey'];
+            const baraja = [];
+
+            for (const palo of palos) {
+                for (const valor of valores) {
+                    baraja.push(`${valor} de ${palo}`);
+                }
+            }
+
+            return baraja;
+        }
+
+        // Función para barajar la baraja usando el algoritmo de Fisher-Yates
+        function barajarBaraja(baraja) {
+            for (let i = baraja.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [baraja[i], baraja[j]] = [baraja[j], baraja[i]];
+            }
+        }
+
+        // Crea una baraja y la baraja
+        const barajaEspanola = crearBaraja();
+        barajarBaraja(barajaEspanola);
+
+        // Función para obtener una carta al azar
+        function obtenerCartaAlAzar() {
+            const carta = barajaEspanola.pop(); // Obtiene la última carta de la baraja
+            return carta || 'La baraja está vacía'; // Si la baraja está vacía, devuelve un mensaje
+        }
+
+        // Ejemplo de uso
+        console.log("Baraja Española barajada:", barajaEspanola);
+
+        // Obtén una carta al azar
+        const cartaAlAzar1 = obtenerCartaAlAzar();
+        console.log("Carta al azar:", cartaAlAzar1);
+
+        // Obtén otra carta al azar
+        const cartaAlAzar2 = obtenerCartaAlAzar();
+        console.log("Otra carta al azar:", cartaAlAzar2);
+
+
+    </script>
+
+</body>
+
+</html>

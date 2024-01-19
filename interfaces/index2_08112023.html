@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+    <style>
+        body{
+            background-color: blue;
+        }
+.container{
+    height: 100px;
+    width: 100px;
+    border: 3px solid ;
+    margin: 40px;
+    background-color: yellow;
+    transition-property: all;
+    transition-duration: 1s, 2s;
+    position: relative;
+}
+.caja:hover > .container{
+    left: 80%;
+    background-color: coral;
+}
+
+.container:nth-child(1){
+    transition-timing-function: linear;
+}
+    </style>
+</head>
+
+<body>
+
+    <div class="container"></div>
+    <div class="container"></div>
+    <div class="container"></div>
+    <div class="container"></div>
+    <div class="container"></div>
+
+</body>
+
+</html>

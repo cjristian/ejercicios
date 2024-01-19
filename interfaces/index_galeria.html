@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catalogo</title>
+    <style>
+        body {
+            background-color: black;
+        }
+
+        #container {
+
+            display: grid;
+            grid-template-rows: repeat(3, 1fr);
+            grid-template-columns: repeat(3, 1fr);
+            place-items: center;
+
+
+
+        }
+
+        .img1 {
+            position: relative;
+            width: 250px;
+            transition: all .3s ease;
+        }
+
+        .img1 img:first-child {
+            box-shadow: 0 60px 60px -60px rgb(0, 30, 255, 0.5);
+            border-radius: 4px;
+            object-fit: cover;
+            width: 100%;
+        }
+
+        .img1 img:last-child {
+            position: absolute;
+            width: 200px;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            transform: translateY(25%);
+            transition: .3s ease;
+            opacity: 0;
+        }
+
+        .img1:hover {
+            transform:
+                perspective(250px) rotateX(10deg) translateY(-5%) translateZ(0);
+        }
+
+        .img1::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            background-image:
+                linear-gradient(to bottom, transparent 10%,
+                    rgb(0, 0, 0, 0.5)50%, rgb(0, 0, 0)95%);
+            opacity: 0;
+            transition: all .3s ease;
+        }
+
+        .img1:hover::before {
+            opacity: 1;
+        }
+
+        .img1:hover img:last-child {
+            opacity: 1;
+            transform: translate(10%);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div class="img1">
+
+            <img src="img/mario.jpg" alt="MarioCartelera">
+            <img src="img/marioMovimiento.png" alt="MarioMovimiento">
+        </div>
+        <div class="img1">
+            <img src="img/deadpool.jpg" alt="DeadpoolCartelera">
+
+
+            <img src="img/deadpoolMovimiento.png" alt="DeadpoolMovimiento">
+
+
+        </div>
+        <div class="img1">
+            <img src="img/marvel.jpg" alt="DeadpoolCartelera">
+
+
+            <img src="img/marvelMovimiento.png" alt="DeadpoolMovimiento">
+
+
+        </div>
+        <div class="img1">
+            <img src="img/wonka.jpg" alt="DeadpoolCartelera">
+
+
+            <img src="img/wonkaMovimiento.png" alt="DeadpoolMovimiento">
+
+
+        </div>
+        <div class="img1">
+            <img src="img/venom.jpg" alt="DeadpoolCartelera">
+
+
+            <img src="img/venomMovimiento.jpg" alt="DeadpoolMovimiento">
+
+
+        </div>
+        <div class="img1">
+            <img src="img/toyStory.jpg" alt="DeadpoolCartelera">
+
+
+            <img src="img/toystoryMovimiento.png" alt="DeadpoolMovimiento">
+
+
+        </div>
+
+
+    </div>
+
+</body>
+
+</html>

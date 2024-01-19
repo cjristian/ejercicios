@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col-6">
+                <label for="rango" class="form-label">Precio</label>
+                <input type="range" id="rango" min="0" max="1000" step="100" class="form-range">
+                <div class="d-flex justify-content-between">
+                    <p class="form-text">0$</p>
+                    <p class="form-text">100$</p>
+                </div>
+            </div>
+            <div class="col-6">
+                <label for="disable-rango" class="form label">Valor</label>
+                <input type="range" id="disable-rango" class="form-range" disabled>
+                <div class="d-flex justify-content-between">
+                    <p class="form-text">0$</p>
+                    <p class="form-text">100$</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row mt-3">
+            <div class="col-6">
+                <div class="input-group mb-3">
+                    <input type="text" placeholder="Nombre" aria-label="Nombre" class="form-control">
+                    <span class="input-group-text">gmial.com</span>
+                </div>
+                <div class="input-group mb-3">
+                    <span class="input-group-text">Notas:</span>
+                    <textarea name="" id="label-nota" aria-label="Notas" class="form-control"></textarea>
+                </div>
+                <div class="input-goup mb-3">
+                    <span class="input-group-text">Nombre</span>
+                    <input type="text" aria-label="Nombre" class="from-control">
+                    <span class="input-group-text">Apellido</span>
+                    <input type="text" aria-label="Apellido" class="from-control">
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="input-group input-group-sm mb-3">
+                    <spna class="input-group-text">Pequeño</spna>
+                    <input type="text" aria-label="Nombre" class="form-control">
+                </div>
+                <div class="input-group input-group-lg mb-3">
+                    <span class="input-group-text">Grande</span>
+                    <input type="text" aria-label="Nombre" class="form-control">
+                </div>
+                <div class="input-group ">
+                    <label for="pais" class="input-group-text">Pais</label>
+                    <select name="" id="pais" class="form-select">
+                        <option value="italia">Italia</option>
+                        <option value="españa">España</option>
+                        <option value="Francia">Francia</option>
+                    </select>
+                    <button class="btn btn-primary">Enviar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
