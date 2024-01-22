@@ -11,6 +11,28 @@
 <body>
     <div class="container">
         <div class="row mt-5">
+            <p class="display-1">Registro</p>
+
+            <form action="<?= htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
+                <div class="col-12 mb-3">
+                    <label for="nombre" class="form-label">Nombre</label>
+                    <input type="text" class="form-control" id="nombre" name="nombre">
+                    <label for="apellido" class="form-label">Apellido</label>
+                    <input type="text" class="form-control" id="apellido" name="apellido">
+                    <label for="user" class="form-label">Nombre de usuario</label>
+                    <input type="text" class="form-control" id="user" name="user">
+                    <label for="contrasena" class="form-label">Contraseña</label>
+                    <input type="password" class="form-control" id="contrasena" name="contrasena">
+                    <label for="email" class="form-label">Correo Electronico</label>
+                    <input type="email" class="form-control" placeholder="correo@correo.com" id="email" name="email">
+                    <label for="nacimiento" class="form-label">Fecha de nacimiento</label>
+                    <input type="date" class="form-control" placeholder="correo@correo.com" id="nacimiento"
+                        name="nacimiento">
+                </div>
+                <div class="col-12">
+                    <button type="submit" class="btn btn-block btn-primary">Enviar</button>
+                </div>
+            </form>
 
 
             <?php
@@ -18,7 +40,7 @@
                 $nombre = trim(htmlspecialchars($_POST['nombre']));
                 $apellido = trim(htmlspecialchars($_POST['apellido']));
                 $miUsuario = trim(htmlspecialchars($_POST['user']));
-                $contrasena = trim(htmlspecialchars($_POST['contrasena']));
+                $contrasena = md5(trim(htmlspecialchars($_POST['contrasena'])));
                 $email = trim(htmlspecialchars($_POST['email']));
                 $nacimiento = trim(htmlspecialchars($_POST['nacimiento']));
                 $errores = [];
@@ -45,61 +67,59 @@
 
 
 
-
                 if (empty($errores)) {
+                    $bandera = false;
                     $conex1 = new mysqli("localhost", "Cjristian", "vpDbBb!2Mlz2JRCa", "cjristian2024"); // Abre una conexión
                     if (mysqli_connect_errno()) { // Comprueba conexión
                         printf("Conexión fallida: %s\n", mysqli_connect_error());
                         exit();
                     }
-                    $stm = $mysqli->prepare("SELECT username , email FROM user WHERE username=(?) or email(?)");
+                    $stm = $conex1->prepare("SELECT username , email FROM user WHERE username=? or email=?");
                     $stm->bind_param('ss', $miUsuario, $email);
                     $stm->execute();
                     $result = $stm->get_result();
                     while ($fila = $result->fetch_assoc()) {
-                        if (($fila['username'] == $miUsuario) && ($fila['email'] == $email)) {
-
+                        if (($fila['username'] == $miUsuario) || ($fila['email'] == $email)) {
+                            $bandera = true;
+                            break;
                         }
                     }
-                    $stmt->close();
+                    $stm->close();
+
+                    if (!$bandera) {
+                        $stm = $conex1->prepare("INSERT INTO user (name, lastname, username, password, email ,birthday) VALUE (?, ?, ?, ?, ?, ?)");
+                        $stm->bind_param('ssssss', $nombre, $apellido, $miUsuario, $contrasena, $email, $nacimiento);
+                        if ($stm->execute()) {
+                            $stm->close();
+                            header("Location: login.php");
+                        } else {
+                            die("Error en la consulta al guardar los datos del nuevo usuario");
+                        }
+
+                    } else {
+                        $errores[] = "El nombre de usuario o correo electrónico ya existe";
+                        echo '<div class="alert alert-danger mt-4" role="alert">';
+                        foreach ($errores as $key) {
+                            echo "<strong><p>$key<p></strong>";
+                        }
+                        echo "</div>";
+                    }
                     $conex1->close();
                 } else {
 
                     ?>
-                    <p class="display-1">Registro</p>
-
-                    <form action="<?= htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
-                        <div class="col-12 mb-3">
-                            <label for="nombre" class="form-label">Nombre</label>
-                            <input type="text" class="form-control" id="nombre" name="nombre">
-                            <label for="apellido" class="form-label">Apellido</label>
-                            <input type="text" class="form-control" id="apellido" name="apellido">
-                            <label for="user" class="form-label">Nombre de usuario</label>
-                            <input type="text" class="form-control" id="user" name="user">
-                            <label for="contrasena" class="form-label">Contraseña</label>
-                            <input type="password" class="form-control" id="contrasena" name="contrasena">
-                            <label for="email" class="form-label">Correo Electronico</label>
-                            <input type="email" class="form-control" placeholder="correo@correo.com" id="email" name="email">
-                            <label for="nacimiento" class="form-label">Fecha de nacimiento</label>
-                            <input type="date" class="form-control" placeholder="correo@correo.com" id="nacimiento"
-                                name="nacimiento">
-                        </div>
-                        <div class="col-12">
-                            <button type="submit" class="btn btn-block btn-primary">Enviar</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-            <?php echo '<div class="alert alert-danger mt-4" role="alert">';
-            foreach ($errores as $key) {
-                echo "<strong><p>$key<p></strong>";
-            }
-            echo "</div>";
+                    <?php echo '<div class="alert alert-danger mt-4" role="alert">';
+                    foreach ($errores as $key) {
+                        echo "<strong><p>$key<p></strong>";
+                    }
+                    echo "</div>";
 
                 }
             }
             ?>
 
+        </div>
+    </div>
 </body>
 
 </html>
