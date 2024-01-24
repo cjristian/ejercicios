@@ -34,7 +34,7 @@
             $errores[] = "No has introducido el Codigo Postal";
         }
         if (empty($errores)) {
-            $stm = $conn->prepare("INSERT INTO ferreteria (name , address,cp) VALUES (?,?,?)");
+            $stm = $conn->prepare("INSERT INTO store (name , address,cp) VALUES (?,?,?)");
             $stm->bind_param('sss', $nombre, $direccion, $cp);
             if ($stm->execute()) {
                 echo "Se ha introducido";
@@ -53,7 +53,7 @@
 
     }
 
-    $query = "SELECT id, name, address , cp FROM ferreteria";
+    $query = "SELECT id, name, address , cp FROM store";
     $result = $conn->query($query);
     if ($result->num_rows == 0) {
         echo "No hay ferreterias";
