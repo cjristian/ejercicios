@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="row mt-3">
+            <div class="col">
+                <nav aria-label="Paginacion de la pagina">
+                    <ul class="pagination">
+                        <li class="page-item disabled" aria-disabled="true" tabindex="-1">
+                            <a href="#" class="page-link">Anterior</a>
+                        </li>
+                        <li class="page-item active"><span class="page-link" aria-current="page">1</span></li>
+                        <li class="page-item"><a href="#" class="page-link">2</a></li>
+                        <li class="page-item"><a href="#" class="page-link">3</a></li>
+                        <li class="page-item"><a href="#" class="page-link">Siguiente</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col">
+                <nav aria-label="Paginacion de la pagina">
+                    <ul class="pagination">
+                        <li aria-disabled="true" tabindex="-1" class="page-item disabled">
+                            <a href="#" aria-label="Pagina Anterior" class="page-link">&laquo;</a>
+
+                        </li>
+                        <li class="page-item active"><span class="page-link" aria-current="page">1</span></li>
+                        <li class="page-item"><a href="#" class="page-link">2</a></li>
+                        <li class="page-item"><a href="#" class="page-link">3</a></li>
+                        <li class="page-item">
+                            <a href="#" class="page-link" aria-label="Siguiente">&raquo;</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+        <div class="row mt-3">
+            <div class="col">
+                <nav aria-label="Paginacion de la pagina">
+                    <ul class="pagination pagination-lg">
+                        <li class="page-item disabled" aria-disabled="true" tabindex="-1">
+                            <a href="#" class="page-link bg-dark text-warning">Anterior</a>
+                        </li>
+                        <li class="page-item active"><span class="page-link bg-warning text-light " aria-current="page">1</span></li>
+                        <li class="page-item"><a href="#" class="page-link bg-warning  text-light">2</a></li>
+                        <li class="page-item"><a href="#" class="page-link bg-warning  text-light">3</a></li>
+                        <li class="page-item"><a href="#" class="page-link bg-dark text-warning">Siguiente</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col">
+                <nav aria-label="Paginacion de la pagina">
+                    <ul class="pagination justify-content-center">
+                        <li class="page-item disabled" aria-disabled="true" tabindex="-1">
+                            <a href="#" class="page-link">Anterior</a>
+                        </li>
+                        <li class="page-item active"><span class="page-link" aria-current="page">1</span></li>
+                        <li class="page-item"><a href="#" class="page-link">2</a></li>
+                        <li class="page-item"><a href="#" class="page-link">3</a></li>
+                        <li class="page-item"><a href="#" class="page-link">Siguiente</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col">
+                <nav aria-label="Paginacion de la pagina">
+                    <ul class="pagination justify-content-end">
+                        <li class="page-item disabled" aria-disabled="true" tabindex="-1">
+                            <a href="#" class="page-link">Anterior</a>
+                        </li>
+                        <li class="page-item active"><span class="page-link" aria-current="page">1</span></li>
+                        <li class="page-item"><a href="#" class="page-link">2</a></li>
+                        <li class="page-item"><a href="#" class="page-link">3</a></li>
+                        <li class="page-item"><a href="#" class="page-link">Siguiente</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row" style="margin-top:200px;">
+            <div class="col">
+                <button data-bs-toggle="popover" title="Titulo delpopover" data-bs-content="Lorem ipsum dolor sit amet"
+                    data-bs-placement="top" class="btn btn lg btn-primary">
+                    Popover Arriba
+                </button>
+                <button data-bs-toggle="popover" title="Titulo delpopover" data-bs-content="Lorem ipsum dolor sit amet"
+                    data-bs-placement="right" class="btn btn lg btn-primary">
+                    Popover Derecha
+                </button>
+                <button data-bs-toggle="popover" title="Titulo delpopover" data-bs-content="Lorem ipsum dolor sit amet"
+                    data-bs-placement="bottom" class="btn btn lg btn-primary">
+                    Popover Abajo
+                </button>
+                <button data-bs-toggle="popover" title="Titulo delpopover" data-bs-content="Lorem ipsum dolor sit amet"
+                    data-bs-placement="left" class="btn btn lg btn-primary">
+                    Popover Izquierda
+                </button>
+            </div>
+        </div>
+    </div>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script>
+        const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
+        const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl))
+    </script>
+
+</body>
+
+</html>
