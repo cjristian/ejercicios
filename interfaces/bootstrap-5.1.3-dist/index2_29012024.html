@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col">
+                <button type="button" class="btn btn-primary" data-bs-toggle="tooltip" data-bs-placement="top"
+                    data-bs-title="Tooltip on top">
+                    Tooltip arriba
+                </button>
+                <button type="button" class="btn btn-primary" data-bs-toggle="tooltip" data-bs-placement="right"
+                    data-bs-title="Tooltip on right">
+                    Tooltip derecha
+                </button>
+                <button type="button" class="btn btn-primary" data-bs-toggle="tooltip" data-bs-placement="bottom"
+                    data-bs-title="Tooltip on bottom">
+                    Tooltip abajo
+                </button>
+                <button type="button" class="btn btn-primary" data-bs-toggle="tooltip" data-bs-placement="left"
+                    data-bs-title="Tooltip on left">
+                    Tooltip isquierda
+                </button>
+
+            </div>
+        </div>
+    </div>
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl)
+        })
+    </script>
+
+</body>
+
+</html>
