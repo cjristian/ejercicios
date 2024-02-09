@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animacion</title>
+</head>
+<style>
+    * {
+
+        background-color: rgb(75, 102, 207);
+        padding: 0;
+        margin: 0;
+    }
+
+    .content {
+        padding: 20px 5px;
+        background-color: lightblue;
+    }
+
+    .container {
+        height: 150px;
+        width: 150px;
+        background-color: lightblue;
+        margin: 20px;
+        animation-name: movimiento;
+        animation-duration: 4s;
+        position: relative;
+        animation-iteration-count: 3;
+        animation-direction: alternate;
+        animation-fill-mode: both;
+        animation-delay: 1s;
+        animation-timing-function: cubic-bezier(0.91,-0.3, 0.07, 1)
+    }
+
+    @keyframes movimiento {
+        0% {
+            left: 0;
+            background: lightblue;
+        }
+
+        50% {
+            background: lime;
+        }
+
+        100% {
+            left: 80%;
+            background: blue;
+        }
+    }
+</style>
+
+<body>
+    <div class="content">
+
+        <div class="container">
+
+        </div>
+    </div>
+</body>
+
+</html>
