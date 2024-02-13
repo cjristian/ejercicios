@@ -50,6 +50,7 @@
             ?>
 
     </div>
+    
     <script>
         var carritoDropdown = document.getElementById('carritoDropdown');
         var dropdownList = [];
