@@ -1,23 +1,37 @@
-<!DOCTYPE html>
-<html lang="en">
-
+<!DOCTYPE HTML>
+<html lang="es-NI">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exercise 1</title>
+   <meta charset="UTF-8">
+   <title>Globos</title>
+   <style type="text/css">
+      .globo
+      {
+         background: #333;
+         border-radius: 15px;
+         color: white;
+         padding: 1em;
+         position: absolute;
+         text-align: center;
+         width: 250px;
+
+      }
+
+      .globo:after
+      {
+         bottom: -15px;
+         border-bottom: 8px solid transparent;
+         border-left:8px solid transparent;
+         border-right: 8px solid transparent;
+         border-top: 8px solid #333;
+         content: " ";
+         position: absolute;
+
+      }
+   </style>
 </head>
-
 <body>
-
-    <script>
-        // Mostrar el título actual del documento en la consola
-        console.log("Título actual del documento:", document.title);
-
-        // Cambiar el título del documento
-        document.title = "Nuevo Título";
-
-        // Mostrar el título actualizado en la consola
-        console.log("Título actualizado del documento:", document.title);
-    </script>
-
+   <div class="globo">
+      <em>25K</em>
+   </div>
+</body>
 </html>
