@@ -8,4 +8,4 @@ function saludar(nombre, apellido) { // nombre y apellido son parametros, son va
 }
 saludar('Juan', 'De la torre'); // Pablo y De la torre son argumentos, son los valores reales...
 
-saludar();
+saludar(hola="me llamo juan",apellido=2);

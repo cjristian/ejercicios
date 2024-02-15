@@ -18,5 +18,5 @@ const nuevoArray2 = carrito.forEach( function(producto) {
     return  `Articulo: ${ producto.nombre } Precio: $ producto.precio} `;
  })
 
-console.log(nuevoArray);
+console.log(nuevoArray);//Hace un nuevo arreglo
 console.log(nuevoArray2);
