@@ -5,7 +5,7 @@ class BaseDatos
     protected $bd;
     public function __construct()
     {
-        $dsn = 'mysql:host=localhost;dbname=pedicular;charset=utf8';
+        $dsn = 'mysql:host=localhost;dbname=pedicula;charset=utf8';
         $usuario = 'cjristian';
         $pass = '2119';
         try {
@@ -42,16 +42,15 @@ class BaseDatos
     function getPeliculas($id)
     {
         try {
-            $sql='SELECT i.nombre_actor FROM Interprete i, PeliculaInterprete a WHERE a.id_pelicula=:par1 and i.id_interprete = a.id_interprete';
+            $sql = 'SELECT i.nombre_actor FROM Interprete i, PeliculaInterprete a WHERE a.id_pelicula=:par1 and i.id_interprete = a.id_interprete';
             $q = $this->bd->prepare($sql);
-            $q->execute(array(':par1'=>$id));
+            $q->execute(array(':par1' => $id));
             $q->setFetchMode(PDO::FETCH_ASSOC);
 
             $sql = 'SELECT titulo,anio_estreno,duracion_minutos FROM Pelicula WHERE id:par1';
             $a = $this->bd->prepare($sql);
             $a->execute(array(':par1' => $id));
-            return array_push($a,$q) ;
-           
+            return $a;
         } catch (PDOException $e) {
 
             die("Error al ejecutar  la consulta" . " " . $e->getMessage());

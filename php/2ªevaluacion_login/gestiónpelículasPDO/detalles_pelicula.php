@@ -1,4 +1,4 @@
 <?php
-require("bbdd_config.php");
+require("BaseDatos.php");
 
 
