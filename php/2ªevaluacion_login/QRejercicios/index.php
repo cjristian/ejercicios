@@ -15,7 +15,7 @@
     </nav>
     <div class="container">
         <?php
-        include("QR/php-qrcode-master/lib/full/qrlib.php");  //Librería para generar el código QR
+         //Librería para generar el código QR
         $servername = "localhost";
         $username = "estyle";
         $password = "2119";
@@ -33,7 +33,7 @@
         ?>
                 <div class="product">
                     <div class="product-img">
-                        <img src="
+                        <img src="fotos.php?$row['id'];$row['name'] alt="">
                         <?php
                         QRcode::png("$row[id]$row[name]");
                         ?>" class="card-img-top" alt="Producto Image">

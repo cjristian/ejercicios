@@ -16,9 +16,9 @@ function resultado() {
         });
 
     }
-    function resultado() {
-        var resultado=document.getElementById("valor_numero").textContent = str;
+    function resultado() {tr;
 
+        var resultado=document.getElementById("valor_numero").textContent = s
     }
 
 }
