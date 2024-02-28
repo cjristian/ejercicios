@@ -19,5 +19,11 @@ const carrito = [
 carrito.forEach( producto =>  {
     console.log(`Agregaste ${producto}`);
 });
+const persona={
+    nombre:"Cristian",
+    appellido:"Jimenez",
+    appellido2:"Sarango"
+}
+console.table(persona);
 
 // Lo mismo aplica para los maps, la sintaxis es la misma, solo recuerda, el map te crea un nuevo arreglo, si solo deseas recorrer los elementos utiliza el Foreach, si requieres crear un nuevo arreglo, sin duda el map sera mejor...

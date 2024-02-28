@@ -32,7 +32,7 @@ const carrito = [
     { nombre: 'Celular', precio: 500},
 ]
 
-for(let i = 0; i <= 10; i++) {
+for(let i = 0; i < carrito.length; i++) {
     if(carrito[i].descuento) {
         console.log(`El articulo ${carrito[i].nombre} Tiene descuento... `);
         continue;
