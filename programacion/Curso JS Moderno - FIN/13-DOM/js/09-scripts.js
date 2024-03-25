@@ -5,7 +5,8 @@
 // Cuando le diste me gusta a una foto por accidente y le quitas el like, también hay un cambio, así que sin duda eliminar elementos llega a ser muy común..
 
 // Hay 2 formas de eliminar, una es eliminar un elemento por si mismo y la otra es eliminarlo desde el padre...
-
+const borrarH1 = document.getElementById('formulario');
+// borrarH1.remove();
 const primerEnlace = document.querySelector('a');
 primerEnlace.remove();
 

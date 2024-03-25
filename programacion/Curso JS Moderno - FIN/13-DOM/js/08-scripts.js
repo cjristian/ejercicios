@@ -1,7 +1,8 @@
 // Veamos lo que se conoce como Traversing the DOM
 
 // Todo en JavaScript esta conectado en el document, la forma en que te moverás entre diferentes elementos se le conoce como Traversing the DOM, ir recorriendolo..
-
+const borrarH1 =document.getElementById('formulario');
+borrarH1.remove();
 
 const navegacion = document.querySelector('.navegacion');
 console.log(navegacion);
@@ -77,7 +78,7 @@ console.log(navegacion.firstElementChild);
 
 // Cambiar el primer texto...
 navegacion.firstElementChild.textContent = 'Nuevo Enlace...'
-+
+
 
 
 

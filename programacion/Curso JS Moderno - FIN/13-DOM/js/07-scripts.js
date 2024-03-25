@@ -3,8 +3,8 @@
 // Vamos a cambiar el color de texto del h1
 
 const heading = document.querySelector('h1');
-
-
+const cambioColor = document.querySelector('h3');
+cambioColor.style.backgroundColor = "red";
 // y hay todo un objeto con propiedades CSS que puedes utilizar, si quieres conocerlas todas coloca...
 console.log(heading.style);
 

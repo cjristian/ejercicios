@@ -17,12 +17,12 @@ window.addEventListener('scroll', () => {
     const premium = document.querySelector('.premium');
 
     const ubicacion = premium.getBoundingClientRect(); // Este método te da el tamaño de un elemento y su ubicación respecto a la ubicación actual..
-        // console.log(ubicacion);
+    // console.log(ubicacion);
 
-    if(ubicacion.top < 100) {
-        console.log('Ya esta visible');
+    if (ubicacion.top < 100) {
+        console.log('Ya esta visible' + ubicacion);
     } else {
-        console.log('Aún no esta visible..')
+        console.log('Aún no esta visible..' + ubicacion)
     }
 
 
