@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tragamonedas</title>
+  <style>
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      background-color: black;
+    }
+
+    #slotMachine {
+      display: flex;
+      flex-direction: column;
+      width: 300px;
+      height: 300px;
+      align-items: center;
+      background-color: yellow;
+      border: 5px solid red;
+    }
+
+    .slot {
+      font-size: 2em;
+      margin: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<div id="slotMachine">
+  <div class="slot" id="slot1">0</div>
+  <div class="slot" id="slot2">0</div>
+  <div class="slot" id="slot3">0</div>
+  <button onclick="spin()">Tirar</button>
+  <p id="result"></p>
+</div>
+
+<script>
+  function spin() {
+    // Generar números aleatorios del 1 al 3 para cada slot
+    const number1 = Math.floor(Math.random() * 3) + 1;
+    const number2 = Math.floor(Math.random() * 3) + 1;
+    const number3 = Math.floor(Math.random() * 3) + 1;
+
+    // Mostrar los números en los slots
+    document.getElementById('slot1').innerText = number1;
+    document.getElementById('slot2').innerText = number2;
+    document.getElementById('slot3').innerText = number3;
+
+    // Verificar si los números coinciden
+    if (number1 === number2 && number2 === number3) {
+      document.getElementById('result').innerText = '¡Ganaste!';
+    } else {
+      document.getElementById('result').innerText = '¡Inténtalo de nuevo!';
+    }
+  }
+</script>
+
+</body>
+</html>

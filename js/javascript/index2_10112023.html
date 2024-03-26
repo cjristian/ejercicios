@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function Animal(edad, esCarnivoro, pelaje,velocidad,tipoAnimal,  patas, peso) {
+            this.edad = edad//muestra la edad del animal
+            this.esCarnivoro = esCarnivoro // si e carnivoro
+            this.pelaje = pelaje //que tipo de pelaje tiene
+            this.velocidad = velocidad//la velocidad del animal
+            this.comer = function () { return "Estoy comiendo" } // muestra si esta comiendo
+            this.correr = function () {//funcion que aumenta velocidad
+                this.velocidad++;
+            }
+            this.tipoAnimal = tipoAnimal //tipo de animal que es
+            this.dormir = function () { return "Esto durmiendo" }//funcion que duerme
+            this.patas = patas//patas del animal
+            this.peso = peso//peso del animal
+
+        }
+        var perro= new Animal(4,false,"claro",2,"canino",4,56)
+        perro.correr();
+        console.log(perro)
+        alert(perro.velocidad)
+    </script>
+</body>
+
+</html>

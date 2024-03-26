@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Cristian Javier Jimenez Sarango -->
+</head>
+
+<body>
+
+
+    <script>
+        // Función de Generación de Secuencias
+        function generarSecuencia(n) {
+            if (n === 1) {
+                return "1";
+            } else {
+                return generarSecuencia(n - 1) + n;
+            }
+        }
+
+        // Función de Suma de Dígitos
+        function sumaDigitos(numero) {
+            if (numero < 10) {
+                return numero;
+            } else {
+                return numero % 10 + sumaDigitos(Math.floor(numero / 10));
+            }
+        }
+
+        // Función de Factorial
+        function calcularFactorial(m) {
+            if (m === 0 || m === 1) {
+                return 1;
+            } else {
+                return m * calcularFactorial(m - 1);
+            }
+        }
+
+        // Función de Potencia
+        function calcularPotencia(base, exponente) {
+            if (exponente === 0) {
+                return 1;
+            } else {
+                return base * calcularPotencia(base, exponente - 1);
+            }
+        }
+
+        // Función de Fibonacci Recursiva
+        function calcularFibonacci(k) {
+            if (k === 0) {
+                return 0;
+            } else if (k === 1) {
+                return 1;
+            } else {
+                return calcularFibonacci(k - 1) + calcularFibonacci(k - 2);
+            }
+        }
+
+        // Manejo de Errores y Validación
+        function obtenerNumeroPositivo() {
+            let numero;
+            do {
+                numero = parseInt(prompt("Ingrese un número entero positivo:"));
+            } while (isNaN(numero) || numero <= 0);
+
+            return numero;
+        }
+
+        // Programa Principal
+        try {
+            const n = obtenerNumeroPositivo();
+
+            // Generar secuencia
+            const secuencia = generarSecuencia(n);
+            console.log(`Secuencia generada: ${secuencia}`);
+
+            // Calcular suma de dígitos
+            const sumaDigitosSecuencia = sumaDigitos(parseInt(secuencia));
+            console.log(`Suma de dígitos: ${sumaDigitosSecuencia}`);
+
+            // Calcular factorial
+            const factorialN = calcularFactorial(n);
+            console.log(`Factorial de ${n}: ${factorialN}`);
+
+            // Calcular potencia
+            const potencia2Factorial = calcularPotencia(2, factorialN);
+            console.log(`2^${factorialN}: ${potencia2Factorial}`);
+
+            // Calcular término en la secuencia de Fibonacci
+            const fibonacciResultado = calcularFibonacci(potencia2Factorial);
+            console.log(`Término en la secuencia de Fibonacci para 2^${factorialN}: ${fibonacciResultado}`);
+        } catch (error) {
+            console.error(`Error: ${error.message}`);
+        }
+
+    </script>
+</body>
+
+</html>

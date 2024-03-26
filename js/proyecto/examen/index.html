@@ -1,0 +1,99 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulario con Web Storage y AJAX</title>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const formulario = document.forms['formulario'];
+      const checkboxes = formulario.elements['regalo'];
+      const botonEnviar = document.getElementById('enviar');
+      const errorMensaje = document.getElementById('error');
+      const enviandoMensaje = document.getElementById('enviando');
+      const datosDiv = document.getElementById('datos');
+
+      // Verificar Web Storage y mostrar mensaje de bienvenida
+      if (!localStorage.getItem('ultimaVisita')) {
+        datosDiv.innerHTML = '<p>Es la primera vez que visita esta página</p>';
+      } else {
+        const ultimaVisita = JSON.parse(localStorage.getItem('ultimaVisita'));
+        datosDiv.innerHTML = `<p>Última visita: ${ultimaVisita.fecha}, Posición: ${ultimaVisita.posicion}</p>`;
+      }
+
+      // Evento al hacer clic en el botón de envío
+      botonEnviar.addEventListener('click', () => {
+        // Verificar si se seleccionaron dos regalos
+        const regalosSeleccionados = Array.from(checkboxes).filter(checkbox => checkbox.checked);
+        if (regalosSeleccionados.length === 2) {
+          errorMensaje.style.display = 'none';
+          enviandoMensaje.style.display = 'block';
+
+          // Obtener fecha y posición
+          const fecha = new Date().toLocaleString();
+          const posicion = window.scrollY;
+
+          // Guardar datos en Web Storage
+          localStorage.setItem('ultimaVisita', JSON.stringify({ fecha, posicion }));
+
+          // Crear objeto de datos a enviar
+          const datos = {
+            fecha,
+            posicion,
+            regalos: regalosSeleccionados.map(regalo => regalo.value)
+          };
+
+          // Simular envío de datos con AJAX
+          setTimeout(() => {
+            enviandoMensaje.style.display = 'none';
+            alert('Datos enviados con éxito');
+          }, 2000);
+
+          // Enviar datos con AJAX
+          // Comenta las líneas siguientes si no tienes un servidor para manejar la petición
+          /*
+          fetch('server.php', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(datos)
+          })
+          .then(response => response.json())
+          .then(result => {
+            enviandoMensaje.style.display = 'none';
+            alert(result.message);
+          })
+          .catch(error => {
+            enviandoMensaje.style.display = 'none';
+            alert('Error en la petición: Datos recibidos erróneos');
+          });
+          */
+        } else {
+          // Mostrar mensaje de error durante 5 segundos
+          errorMensaje.style.display = 'block';
+          setTimeout(() => {
+            errorMensaje.style.display = 'none';
+          }, 5000);
+        }
+      });
+    });
+  </script>
+</head>
+<body>
+  <h1>Formulario</h1>
+  <hr>
+  <form name="formulario">
+    <p>Es la primera vez que visita esta página</p><br />
+    Regalos:
+    <input type="checkbox" name="regalo" value="Bicicleta">Bicicleta<br>
+    <input type="checkbox" name="regalo" value="Raqueta">Raqueta<br>
+    <input type="checkbox" name="regalo" value="Balón">Balón<br><br>
+    <input type="button" id="enviar" value="Enviar">
+  </form>
+  <p id="error" style="display: none;">¡¡¡ Debe seleccionar dos regalos !!!</p>
+  <p id="enviando" style="display: none;">Enviando...</p>
+  <div id="datos"></div>
+</body>
+</html>

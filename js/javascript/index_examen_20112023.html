@@ -1,0 +1,70 @@
+<!-- Clase Libro:
+
+1-Define una clase llamada Libro con las siguientes propiedades:
+
+titulo (cadena): el título del libro.
+autor (cadena): el autor del libro.
+paginas (número): la cantidad de páginas del libro.
+prestado (booleano): indica si el libro está prestado o no.
+También, incluye un método prestar() que cambia el estado del libro a prestado.
+
+2--Clase Biblioteca:
+
+Define una clase llamada Biblioteca con las siguientes propiedades:
+
+nombre (cadena): el nombre de la biblioteca.
+libros (arreglo): una lista que contendrá objetos de la clase Libro.
+Incluye un método agregarLibro(libro) que agrega un objeto de la clase Libro al arreglo libros.
+
+Incluye un método buscarLibro(titulo) que busca un libro por su título y devuelve el objeto Libro correspondiente.
+
+Incluye un método librosDisponibles() que devuelve una lista de los libros que no están prestados.
+
+4-Programa Principal:
+
+Crea una instancia de la clase Biblioteca.
+Pide al usuario que ingrese información sobre varios libros (título, autor, páginas).
+Agrega cada libro a la biblioteca.
+Pide al usuario que indique si un libro está prestado o no.
+Imprime la lista de libros disponibles en la biblioteca. -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function Libro(titulo, autor, paginas, prestado) {
+            this.titulo = titulo;
+            this.autor = autor;
+            this.paginas = paginas;
+            this.prestado = prestado;
+            this.prestado = function () {
+                if (this.prestado == false) {
+                    this.prestado = true;
+
+                }
+            }
+
+        }
+        function Biblioteca(nombre) {
+            this.nombre = nombre;
+            this.libros = [];
+
+        }
+        Biblioteca.prototype.agregarLibro = function (libro) {
+            if (libro instanceof Libro) {
+                this.libros.push(libro);
+            } else {
+                console.error("Error: El objeto no es de tipo Libro.");
+            }
+        };
+    </script>
+
+</body>
+
+</html>

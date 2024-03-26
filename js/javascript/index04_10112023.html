@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var gas = {
+            peso: 40.0,
+            set pesoLibras(x) { this.peso * 2.204 },
+            get pesoLibras() {
+                return this.peso *2.204
+            }
+        };
+        console.log (gas.peso)
+        gas.pesoLibras=20;
+        console.log(gas.pesoLibras)
+    </script>
+</body>
+
+</html>
