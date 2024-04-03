@@ -1,0 +1,13 @@
+h1 {
+  padding: 10px;
+}
+
+.tasks {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.description {
+  display: flex;
+}

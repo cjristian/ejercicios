@@ -1,0 +1,17 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+#root {
+  margin: auto;
+  height: 400px;
+  width: 400px;
+  background-color: rgb(249, 225, 14);
+  text-align: center;
+}
